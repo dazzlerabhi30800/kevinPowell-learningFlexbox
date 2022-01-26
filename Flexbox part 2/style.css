@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+    font-family : 'Poppins', sans-serif;
+}
+
+:root {
+    --clr-orange: 7 100% 63%;
+    --clr-blue: 239 100% 50%;
+    --clr-green: 125 50% 50%;
+    --spacer: 2rem;
+}
+
+body {
+    min-height : 100vh;
+    padding : var(--spacer);
+    line-height : 1.6;
+}
+
+h1 {
+    margin-bottom : 1em;
+    font-size : clamp(2rem, 5vw + 1rem, 4rem);
+    line-height : 1.1;
+    color : hsl(var(--clr-orange));
+    text-shadow : 0.05em 0.05em 0 hsl(0 0% 0% / 0.7);
+}
+
+.card {
+    padding : 1rem;
+    background : hsl(var(--clr-green));
+    cursor : pointer;
+    transition : all .5s ease-in;
+
+}
+.card:hover {
+    background : rgb(103, 240, 164);
+}
+
+.columns {
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    gap : 2rem;
+    border : 10px solid firebrick;
+    /* width : 800px; */
+}
+
+.columns > * {
+    /* flex : 1; */
+    /* flex-shrink : 1; */
+    flex-basis : 100%;
+
+    /* flex-grow : 1;
+    flex-shrink : 1;
+    flex-basis : 0; */
+}
+
+.card:nth-child(2) {
+    background : pink;
+    align-self : flex-start;
+}
+
+@media (min-width : 600px) {
+    .columns {
+        flex-direction : row;
+    }
+}
